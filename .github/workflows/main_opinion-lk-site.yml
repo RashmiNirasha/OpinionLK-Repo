@@ -25,7 +25,8 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          
+          npm run test --if-present
+      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -37,7 +38,7 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: https://opinion-lk-site.azurewebsites.net/
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
       - name: Download artifact from build job
