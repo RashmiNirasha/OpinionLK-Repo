@@ -8,10 +8,12 @@ import swagger from 'swagger-ui-express';
 import cors from 'cors';
 import surveyRoutes from './routes/surveys.js';
 
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3002;
+const path = require('path');
 
 app.get('/', function (req, res) {
   res.json({
@@ -20,7 +22,7 @@ app.get('/', function (req, res) {
 });
 // MIDDLEWARE
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.use(cors({ origin: 'https://opinion-lk-site.azurewebsites.net/', optionsSuccessStatus: 200 }));
 
 // ROUTES
 app.use('/api/auth', authRoutes);
@@ -59,3 +61,9 @@ mongoose
     console.log('MongoDB Connected');
   })
   .catch((error) => console.error('Error connecting to MongoDB: ', error.message));
+
+  //production script 
+  app.use(express.static("./client/build"));
+  app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"client","build","index,html"));
+  });
