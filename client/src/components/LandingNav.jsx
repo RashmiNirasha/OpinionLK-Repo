@@ -13,7 +13,6 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    useColorMode,
     useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -32,7 +31,6 @@ import Logo from '../images/logonav.png';
 import DarkLogo from '../images/darklogo.png';
 
 export default function WithSubnavigation() {
-    const { colorMode, toggleColorMode } = useColorMode()
     const { isOpen, onToggle } = useDisclosure();
 
     return (
