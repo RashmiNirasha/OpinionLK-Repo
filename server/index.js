@@ -13,7 +13,6 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3002;
-const path = require('path');
 
 app.get('/', function (req, res) {
   res.json({
@@ -62,8 +61,3 @@ mongoose
   })
   .catch((error) => console.error('Error connecting to MongoDB: ', error.message));
 
-  //production script 
-  app.use(express.static("./client/build"));
-  app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,"client","build","index,html"));
-  });
