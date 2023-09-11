@@ -1,10 +1,8 @@
 import React from 'react'
 import {
     Box,
-    Image,
     Flex,
     Text,
-    Heading,
     Avatar,
     Menu,
     MenuButton,
@@ -15,15 +13,9 @@ import {
     MenuDivider
 } from '@chakra-ui/react'
 
-import topbarLogo from '../../images/topbar/scaled-logo-icon.svg'
 import { Icon } from '@iconify/react';
 import userdp from '../../images/topbar/download.jpeg'
-import {
-    ChevronDownIcon,
-} from '@chakra-ui/icons'
-
 import { useLogout } from '../../hooks/useLogout';
-
 import { useAuthContext } from '../../hooks/useAuthContext';
 
 const Topbar = () => {

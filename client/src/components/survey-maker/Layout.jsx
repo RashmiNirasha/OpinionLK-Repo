@@ -1,6 +1,5 @@
 
 import { useState } from 'react'
-
 import {
     Box,
     FormControl,
@@ -13,16 +12,10 @@ import {
     Menu,
     MenuButton,
     MenuList,
-    MenuItem,
-    IconButton,
 } from '@chakra-ui/react'
-
 
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
-
-
-import { ChevronDownIcon } from '@chakra-ui/icons';
 import React from 'react'
 
 const MoodOption = ({ index }) => {

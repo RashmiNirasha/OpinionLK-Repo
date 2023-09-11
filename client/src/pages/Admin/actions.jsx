@@ -2,7 +2,6 @@ import {
     Flex, 
     Heading, 
     Stack,
-    Text,
     Card,
     CardHeader,
     CardBody,
@@ -14,11 +13,10 @@ import {
     FormControl,
     Input,
     VStack,
-    FormField,
  } from '@chakra-ui/react';
 
 import React, { useEffect, useState } from "react";
-import {PhoneIcon, CloseIcon, } from "@chakra-ui/icons";
+import {CloseIcon, } from "@chakra-ui/icons";
 import Modal from 'react-modal';
 import axios from "axios";
 

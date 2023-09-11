@@ -1,35 +1,17 @@
  import { useState, useEffect } from 'react'
-
 import {
     Flex,
     Heading,
-    Stack,
     Text,
     Card,
     CardHeader,
     CardBody,
     Button,
-    IconButton,
-    Tag,
-    Icon,
-    Box,
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
 } from '@chakra-ui/react'
 import { Grid, GridItem } from '@chakra-ui/react'
 import React from 'react'
 import Table2 from '../../components/organisation/tantable'
-
 import createsurveybg from '../../assets/images/createsurveybg.png'
-
-import { BiDotsHorizontalRounded } from 'react-icons/bi'
 const SurveyPage = () => {
     const [dat1, setData] = useState(null)
     useEffect(() => {

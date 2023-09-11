@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
 import { useAuthContext } from '../hooks/useAuthContext';
-
 import {
   Box,
   Flex,
@@ -11,14 +9,7 @@ import {
   AlertIcon,
   Stack,
   useMediaQuery,
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  Text,
   HStack,
-  InputGroup,
-  InputRightElement,
   Step,
   StepDescription,
   StepIcon,
@@ -29,17 +20,10 @@ import {
   StepTitle,
   Stepper,
   useSteps,
-  activeStep,
-  description,
-  title,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { ArrowBackIcon } from '@chakra-ui/icons';
-import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import axios from 'axios';
-
 import { OrganizationSignUp, ClientData, ClientSignUp } from '../components/Auth/clientSignupCom.jsx';
-
 
 const SignUp = () => {
   const steps = [
@@ -54,12 +38,7 @@ const SignUp = () => {
   })
 
   const [isLargerThanLG] = useMediaQuery('(min-width: 62em)');
-  const [showPassword, setShowPassword] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
   const [userCreated, setUserCreated] = useState(false);
-
-  const { dispatch } = useAuthContext()
-
   return (
     <Stack direction="row" spacing={4} height={'100vh'}>
       {isLargerThanLG ? (

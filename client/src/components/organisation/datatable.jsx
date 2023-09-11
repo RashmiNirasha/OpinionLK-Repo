@@ -5,19 +5,9 @@ import {
   useReactTable,
   flexRender,
   getCoreRowModel,
-  ColumnDef,
-  SortingState,
   getSortedRowModel,
   getPaginationRowModel
 } from "@tanstack/react-table";
-
-import {
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from '@chakra-ui/icons'
-
-import { RiArrowRightSLine } from "react-icons/ri";
-
 export const DataTable = function (props) {
   const { data, columns } = props;
   const [sorting, setSorting] = useState([]);

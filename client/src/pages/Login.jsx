@@ -3,10 +3,8 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 import {
-    Box,
     Flex,
     Heading,
-    Image,
     Stack,
     useMediaQuery,
     FormControl,
@@ -15,7 +13,6 @@ import {
     Input,
     Checkbox,
     Button,
-    IconButton
 } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { ArrowBackIcon } from '@chakra-ui/icons'

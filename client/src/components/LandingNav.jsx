@@ -1,5 +1,3 @@
-import { chakra } from '@chakra-ui/react';
-
 import {
     Box,
     Flex,
@@ -15,13 +13,8 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
-    useBreakpointValue,
-    colorMode,
     useColorMode,
     useDisclosure,
-
-    Center,
-    DarkMode,
 } from '@chakra-ui/react';
 import {
     Link as ReachLink
@@ -31,8 +24,6 @@ import { motion } from 'framer-motion'
 import {
     HamburgerIcon,
     CloseIcon,
-    MoonIcon
-    , SunIcon,
     ChevronRightIcon,
     ChevronDownIcon
 } from '@chakra-ui/icons';
@@ -44,9 +35,7 @@ export default function WithSubnavigation() {
     const { colorMode, toggleColorMode } = useColorMode()
     const { isOpen, onToggle } = useDisclosure();
 
-
     return (
-
         <motion.div
             initial={{ opacity: 0, y: '-100px' }}
             animate={{ y: '0', opacity: 1, top:0, position:'sticky', zIndex:'100' }}

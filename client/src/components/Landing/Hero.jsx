@@ -4,7 +4,6 @@ import {
   Text,
   useMediaQuery,
   Stack,
-  Box,
   useColorModeValue,
   Button,
   Image
