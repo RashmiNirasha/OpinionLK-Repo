@@ -1,4 +1,4 @@
- import { useState, useEffect } from 'react'
+ import { useEffect } from 'react'
 import {
     Flex,
     Heading,
@@ -13,12 +13,12 @@ import React from 'react'
 import Table2 from '../../components/organisation/tantable'
 import createsurveybg from '../../assets/images/createsurveybg.png'
 const SurveyPage = () => {
-    const [dat1, setData] = useState(null)
+    // const [dat1, setData] = useState(null)
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(response => response.json())
             .then(data => {
-                setData(data);
+                // setData(data);
                 console.log(data);
             })
             .catch(error => {

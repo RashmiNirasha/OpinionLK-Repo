@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-
 import Topbar from '../components/Layout/Topbar'
 import Sidebar from '../components/Layout/Sidebar'
-
 import { Outlet } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
-
 import { useAuthContext } from '../hooks/useAuthContext'
-
 import '../components/Layout/style.css'
 
 const Dashboard = ({ sidebarLinks }) => {
     const {
-        user, dispatch, userData
+        user, dispatch,
     } = useAuthContext();
 
     useEffect(() => {

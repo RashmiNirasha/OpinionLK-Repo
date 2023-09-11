@@ -47,7 +47,7 @@ const MoodOption = ({ index }) => {
 const Layout = () => {
 
     const [type, setType] = useState('text')
-    const [showEmoji, setShowEmoji] = useState(true)
+    // const [showEmoji, setShowEmoji] = useState(true)
     const [moodOptionCount, setMoodOptionCount] = useState(3)
 
     return (

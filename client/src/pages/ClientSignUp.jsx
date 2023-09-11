@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import { useAuthContext } from '../hooks/useAuthContext';
 import {
   Box,
   Flex,
@@ -38,7 +37,7 @@ const SignUp = () => {
   })
 
   const [isLargerThanLG] = useMediaQuery('(min-width: 62em)');
-  const [userCreated, setUserCreated] = useState(false);
+  const [userCreated] = useState(false);
   return (
     <Stack direction="row" spacing={4} height={'100vh'}>
       {isLargerThanLG ? (
