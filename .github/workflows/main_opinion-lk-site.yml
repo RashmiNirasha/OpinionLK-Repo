@@ -53,4 +53,4 @@ jobs:
           app-name: 'opinion-lk-site'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_850438EEC1164022BEBDDA017606B831 }}
-          package: ./node-app
+          package: .
