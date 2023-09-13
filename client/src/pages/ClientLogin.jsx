@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+
 import {
     Flex,
     Heading,
@@ -19,7 +20,9 @@ import { useAuthContext } from '../hooks/useAuthContext';
 
 const Login = () => {
 
-    // const {user} = useAuthContext();
+    const {
+        // eslint-disable-next-line
+        user } = useAuthContext();
     const [isLargerThanLG] = useMediaQuery('(min-width: 62em)');
     const history = useNavigate();
 
@@ -32,7 +35,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:3002/api/auth/client/login", {
+            const response = await axios.post("http://localhost:3002/api/client/login/ClientLogin", {
                 email, password
             });
 

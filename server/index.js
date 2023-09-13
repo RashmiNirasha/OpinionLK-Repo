@@ -7,7 +7,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 import swagger from 'swagger-ui-express';
 import cors from 'cors';
 import surveyRoutes from './routes/surveys.js';
-
+import userRoutes from './routes/user.js';
 
 dotenv.config();
 
@@ -21,12 +21,14 @@ app.get('/', function (req, res) {
 });
 // MIDDLEWARE
 app.use(express.json());
-app.use(cors({ origin: 'https://opinion-lk-site.azurewebsites.net/', optionsSuccessStatus: 200 }));
+app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
 
 // ROUTES
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes); 
 app.use('/api/client', clientRoutes);
+app.use('/api/user', userRoutes);
 app.use('/api/survey', surveyRoutes);
+app.use('/api/survey/images', express.static('./uploads/surveyheader'));
 
 // Swagger
 const options = {
@@ -60,4 +62,3 @@ mongoose
     console.log('MongoDB Connected');
   })
   .catch((error) => console.error('Error connecting to MongoDB: ', error.message));
-

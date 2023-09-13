@@ -13,6 +13,7 @@ import {
     PopoverTrigger,
     PopoverContent,
     useColorModeValue,
+    useColorMode,
     useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -27,27 +28,29 @@ import {
     ChevronDownIcon
 } from '@chakra-ui/icons';
 
-import Logo from '../images/logonav.png';
+import Logo from '../assets/images/landing/darklogo.png';
 import DarkLogo from '../images/darklogo.png';
 
 export default function WithSubnavigation() {
+    // eslint-disable-next-line
+    const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onToggle } = useDisclosure();
 
+
     return (
+
         <motion.div
-            initial={{ opacity: 0, y: '-100px' }}
-            animate={{ y: '0', opacity: 1, top:0, position:'sticky', zIndex:'100' }}
+            initial={{ opacity: 0,  }}
+            animate={{ opacity: 1, top: 0, position: 'sticky', zIndex: '100' }}
             transition={{ ease: "easeOut", duration: 0.5 }}>
             <Box>
                 <Flex
-                    bg={useColorModeValue('white', 'gray.800')}
+                    bg={'#132450'}
                     color={useColorModeValue('gray.600', 'white')}
                     minH={'60px'}
                     py={{ base: 2 }}
                     px={{ base: 4 }}
                     borderBottom={1}
-                    borderStyle={'solid'}
-                    borderColor={useColorModeValue('gray.200', 'gray.900')}
                     align={'center'}>
                     <Flex
                         flex={{ base: 1, md: 'auto' }}
@@ -64,7 +67,8 @@ export default function WithSubnavigation() {
                     </Flex>
                     <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
 
-                        <Image padding={'10px 10px'} width='auto' maxHeight='60px' src={useColorModeValue(Logo, DarkLogo)}
+                        <Image padding={'10px 10px'} width='auto' maxHeight='60px'
+                            src={useColorModeValue(Logo, DarkLogo)}
                             alt='Logo' />
 
 
@@ -121,6 +125,7 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
+    // eslint-disable-next-line
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
@@ -141,7 +146,7 @@ const DesktopNav = () => {
                                 href={navItem.href ?? '#'}
                                 fontSize={'sm'}
                                 fontWeight={500}
-                                color={linkColor}
+                                color={'white'}
                                 _hover={{
                                     textDecoration: 'none',
                                     color: linkHoverColor,
